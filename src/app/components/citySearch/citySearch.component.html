@@ -1,0 +1,19 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input type="text" placeholder="City" matInput
+          name="city"
+          [matAutocomplete]="auto"
+          [(ngModel)]="query"
+          (ngModelChange)="queryChange($event)">
+        <i matSuffix class="material-icons">search</i>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let city of filteredCities" [disabled]="isOnDeshboard(city.id)" (click)="selectCity(city)" color="primary" >
+                <div class="flex-row flex-align-items-center">
+                    <i class="material-icons" *ngIf="isOnDeshboard(city.id)">star</i>
+                    <i class="material-icons" *ngIf="!isOnDeshboard(city.id)">star_border</i>
+                    {{city.name}}, {{city.country}}
+                </div>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>

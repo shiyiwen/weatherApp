@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import '/assets/icon/material-design-icons/material-icons.css';
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-justify-content-center {
+    justify-content: center;
+}
+
+.flex-justify-content-space-between {
+    justify-content: space-between;
+}
+
+.flex-align-items-center {
+    align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.font-size-26 {
+  font-size: 26px;
+}
+
+.padding-5 {
+  padding: 5px;
+}
+
+.padding-left-5 {
+  padding-left: 5px;
+}
+
+.padding-right-26 {
+  padding-right: 26px;
+}

@@ -1,0 +1,30 @@
+<app-card-component>
+  <ng-container card-header *ngIf="currentWeather">
+      <div class="flex-row flex-justify-content-space-between flex-align-items-center">
+          <div>{{currentWeather?.name}}</div>
+          <i class="material-icons cursor-pointer" (click)="removeCity(currentWeather.id)">clear</i>
+      </div>
+  </ng-container>
+  <ng-container card-content>
+    <div *ngIf="currentWeather" class="flex-row flex-justify-content-center flex-align-items-center">
+        <img class="large" src="{{'https://openweathermap.org/img/w/' + currentWeather.weather[0].icon + '.png'}}">
+        <div class="padding-right-26">
+          <div class="font-size-26 padding-left-5">{{currentWeather.main.temp}} °F</div>
+          <div class="padding-5">{{currentWeather.weather[0].description | titlecase}}</div>
+          <div class="flex-row">
+            <div class="padding-5">{{currentWeather.main.temp_max}}  °F</div>
+            <div class="padding-5">{{currentWeather.main.temp_min}}  °F</div>
+          </div>
+        </div>
+    </div>
+    <hr style="opacity: 0.3;">
+    <div *ngIf="fiveDaysForecast" class="forecast-list-container">
+        <div *ngFor="let forecast of fiveDaysForecast" class="flex-row flex-align-items-center flex-justify-content-space-between">
+          <div>{{forecast.dt * 1000 | date:'short'}}</div>
+          <div><img src="{{'https://openweathermap.org/img/w/' + forecast.weather[0].icon + '.png'}}"></div>
+          <div>{{forecast.main.temp}} °F</div>
+        </div>
+    </div>
+  </ng-container>
+</app-card-component>
+

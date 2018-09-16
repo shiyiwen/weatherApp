@@ -1,0 +1,9 @@
+img.large {
+  height: 100px;
+  width: 100px;
+}
+
+.forecast-list-container {
+  height: 260px;
+  overflow: scroll;
+}

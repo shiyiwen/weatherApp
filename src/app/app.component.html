@@ -1,0 +1,17 @@
+<div [ngClass]="{'custom-theme': isDarkTheme, 'light-custom-theme': !isDarkTheme}" class="mat-app-background">
+  <mat-toolbar color="primary" class="flex-row flex-justify-content-space-between">
+      <div>Weather App</div>
+      <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <mat-menu #menu="matMenu" [ngClass]="{'custom-theme': isDarkTheme, 'light-custom-theme': !isDarkTheme}" >
+              <button mat-menu-item (click)="swtchTheme()">Switch Theme</button>
+            </mat-menu>
+      </div>
+  </mat-toolbar>
+  <div class="flex-row flex-justify-content-center">
+      <app-city-search-component></app-city-search-component>
+  </div>
+  <app-card-grid-component></app-card-grid-component>
+</div>
